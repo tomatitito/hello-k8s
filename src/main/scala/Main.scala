@@ -6,8 +6,9 @@ import io.kubernetes.client.util.Config
 import java.util
 
 object Main extends App {
+  println("For starters: Hello k8s!")
   val client = Config.defaultClient()
-  val _ = Configuration.setDefaultApiClient(client)
+  Configuration.setDefaultApiClient(client)
 
   val api = new CoreV1Api()
   val podList: V1PodList = api.listPodForAllNamespaces(null, null, null, null,
